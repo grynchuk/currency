@@ -1,0 +1,6 @@
+currency:
+  items:
+    - { code: !php/enum Currency\Enum\Code::USD, precision: 2, description: 'United States Dollar'}
+    - { code: !php/enum Currency\Enum\Code::EUR, precision: 2, description: 'Euro'}
+    - { code: !php/enum Currency\Enum\Code::UAH, precision: 2, description: 'Ukrainian Hryvna' }
+

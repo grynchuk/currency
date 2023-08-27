@@ -1,0 +1,28 @@
+{
+  "name": "grynchuk/currency",
+  "description": "Get currency rates and perform currency conversion",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "Currency\\": "src/",
+      "Test\\Currency\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.1",
+    "symfony/config": "^6.3",
+    "symfony/yaml": "^6.3",
+    "zhooravell/php-monobank": "^0.0.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.3"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexander Grynchuk",
+      "email": "greenchuckaa@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev"
+}
