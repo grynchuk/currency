@@ -22,7 +22,8 @@ class CurrencyConfiguration implements ConfigurationInterface
                   ->arrayPrototype()
                     ->children()
                        ->enumNode('code')
-                          ->values(Code::cases())
+                          /** @todo set real enum cases after update symfony/config */
+                          ->values(['USD', 'EUR', 'UAH'])
                        ->end()
                        ->integerNode('precision')
                           ->min(0)
