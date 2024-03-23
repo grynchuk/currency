@@ -14,6 +14,7 @@ enum Code: string
 
     case UAH = 'UAH';
 
+    case PLN = 'PLN';
 
     private static function getNumMap(): array
     {
@@ -21,6 +22,7 @@ enum Code: string
             Code::UAH->value => '980',
             Code::EUR->value => '978',
             Code::USD->value => '840',
+            Code::PLN->value => '985',
         ];
     }
 
