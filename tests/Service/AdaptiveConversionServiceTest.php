@@ -19,16 +19,18 @@ use Symfony\Component\Config\Definition\Processor;
 
 class AdaptiveConversionServiceTest extends TestCase
 {
+    private CurrencyService $currencyService;
+
     public function setUp(): void
     {
         $dataProvider = new CurrencyConfigDataProvider(
             new Processor(),
-            new CurrencyConfiguration()
+            new CurrencyConfiguration(),
+            new CurrencyMapper()
         );
 
         $currencyRepository = new EntityRepository(
-            $dataProvider,
-            new CurrencyMapper()
+            $dataProvider
         );
 
         $this->currencyService = new CurrencyService(

@@ -5,7 +5,12 @@ declare(strict_types=1);
 
 namespace Currency\DataProvider;
 
+use Currency\Entity\EntityInterface;
+
 interface DataProviderInterface
 {
-    public function getData(): array;
+    /**
+     * @return \Generator<EntityInterface>
+     */
+    public function getData(): \Generator;
 }

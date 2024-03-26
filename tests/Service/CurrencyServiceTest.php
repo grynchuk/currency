@@ -22,17 +22,18 @@ use Symfony\Component\Config\Definition\Processor;
 
 class CurrencyServiceTest extends TestCase
 {
-    private CurrencyServiceInterface $currencyService;
+
+    private EntityRepository $currencyRepository;
 
     public function setUp(): void
     {
         $dataProvider = new CurrencyConfigDataProvider(
             new Processor(),
-            new CurrencyConfiguration()
+            new CurrencyConfiguration(),
+            new CurrencyMapper()
         );
         $this->currencyRepository = new EntityRepository(
             $dataProvider,
-            new CurrencyMapper()
         );
         unset($dataProvider);
         parent::setUp();
@@ -61,8 +62,7 @@ class CurrencyServiceTest extends TestCase
     public function testGetMonoRate(): void
     {
         $monoRepository = new EntityRepository(
-            new MonobankRateDataProvider($this->getMonoBankClient(), Code::UAH),
-            new RateDataMapper(),
+            new MonobankRateDataProvider($this->getMonoBankClient(), Code::UAH, new RateDataMapper()),
         );
         $currencyService = new CurrencyService(
             $this->currencyRepository,
