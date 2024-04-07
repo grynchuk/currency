@@ -8,7 +8,6 @@ use Currency\Service\Conversion\ConversionServiceInterface;
 
 class AdaptiveConversionService implements ConversionServiceInterface
 {
-
     public function convert(ConversionContext $conversionContext): float
     {
         if (

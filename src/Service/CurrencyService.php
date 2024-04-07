@@ -35,7 +35,7 @@ class CurrencyService implements CurrencyServiceInterface
         Code ...$codes,
     ): \Traversable {
         $searchCondition = new ComplexSearchCondition(
-               Condition::OR,
+            Condition::OR,
             ...array_map(fn (Code $code) => new RateCurrencyCodeSearchCondition($code), $codes)
         );
 

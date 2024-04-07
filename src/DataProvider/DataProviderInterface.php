@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Currency\DataProvider;
 
 use Currency\Entity\EntityInterface;

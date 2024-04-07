@@ -6,5 +6,4 @@ namespace Currency\Entity;
 
 interface EntityInterface
 {
-
 }

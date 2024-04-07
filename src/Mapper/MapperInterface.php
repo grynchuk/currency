@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Currency\Mapper;
 
 use Currency\Entity\EntityInterface;

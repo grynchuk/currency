@@ -17,9 +17,8 @@ class ComplexSearchCondition implements SearchConditionInterface
     public function __construct(
         private readonly Condition $condition,
         SearchConditionInterface ... $searchConditions
-
     ) {
-       $this->searchConditions = $searchConditions;
+        $this->searchConditions = $searchConditions;
     }
 
     public function apply(EntityInterface $entity): bool

@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace Currency\Enum;
 
-
 enum Code: string
 {
-
     case USD = 'USD';
 
     case EUR = 'EUR';

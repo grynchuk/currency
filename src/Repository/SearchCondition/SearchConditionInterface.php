@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace Currency\Repository\SearchCondition;
 
 use Currency\Entity\EntityInterface;

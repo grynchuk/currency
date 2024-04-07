@@ -43,10 +43,16 @@ class MonobankRateDataProvider implements DataProviderInterface
             }
 
             yield $this->mapper->toEntity([
-              'sell' => (float) $rawMonoData[self::PROPERTY_SELL_RATE],
-              'buy' => (float) $rawMonoData[self::PROPERTY_BUY_RATE],
-              'mid' => (float) $rawMonoData[self::PROPERTY_MID_RATE],
-              'date' => (new \DateTimeImmutable)->setTimestamp($rawMonoData[self::PROPERTY_DATE]),
+              'sell' => array_key_exists(self::PROPERTY_SELL_RATE, $rawMonoData)
+                  ? (float) $rawMonoData[self::PROPERTY_SELL_RATE]
+                  : null,
+              'buy' => array_key_exists(self::PROPERTY_BUY_RATE, $rawMonoData)
+                  ? (float) $rawMonoData[self::PROPERTY_BUY_RATE]
+                  : null,
+              'mid' => array_key_exists(self::PROPERTY_MID_RATE, $rawMonoData)
+                  ? (float) $rawMonoData[self::PROPERTY_MID_RATE]
+                  : null,
+              'date' => (new \DateTimeImmutable())->setTimestamp($rawMonoData[self::PROPERTY_DATE]),
               'code' => Code::tryFromNum((string) $rawMonoData[self::PROPERTY_CURRENCY])
             ]);
         }

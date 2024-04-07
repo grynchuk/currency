@@ -77,15 +77,19 @@ class CurrencyServiceTest extends TestCase
     {
         $rates = [
             [
-                "currencyCodeA"=> 840,
+                "currencyCodeA" => 985,
+                "currencyCodeB" => 980,
+                "date" => 1712488296,
+                "rateCross"=> 49.9017,
+            ],
+            [
+                "currencyCodeA" => 840,
                 "currencyCodeB" => 980,
                 "date" => 1693688473,
                 "rateBuy" => 36.65,
-                "rateCross" => 0,
                 "rateSell" => 37.4406,
             ]
         ];
-
         $client = $this->createMock(MonobankClient::class);
         $client->expects($this->once())
             ->method('getExchangeRates')
