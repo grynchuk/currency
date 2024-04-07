@@ -43,6 +43,11 @@ class MonobankRateDataProvider implements DataProviderInterface
                 continue;
             }
 
+            /** Currency code is not supported */
+            if (null === $code = Code::tryFromNum((string) $rawMonoData[self::PROPERTY_CURRENCY])) {
+                continue;
+            }
+
             yield $this->mapper->toEntity([
               'sell' => array_key_exists(self::PROPERTY_SELL_RATE, $rawMonoData)
                   ? (float) $rawMonoData[self::PROPERTY_SELL_RATE]

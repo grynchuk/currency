@@ -83,6 +83,13 @@ class CurrencyServiceTest extends TestCase
                 "rateCross"=> 49.9017,
             ],
             [
+                "currencyCodeA" => 000,
+                "currencyCodeB" => 980,
+                "date" => 1693688473,
+                "rateBuy" => 36.65,
+                "rateSell" => 37.4406,
+            ],
+            [
                 "currencyCodeA" => 840,
                 "currencyCodeB" => 980,
                 "date" => 1693688473,
