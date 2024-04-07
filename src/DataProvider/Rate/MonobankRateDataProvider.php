@@ -39,7 +39,8 @@ class MonobankRateDataProvider implements DataProviderInterface
         foreach ($this->monobankClient->getExchangeRates() as $rawMonoData) {
             $baseCurrencyNum = (string) $rawMonoData[self::PROPERTY_CURRENCY_BASE];
             if ($baseCurrencyNum !== $this->code->getNum()) {
-                throw new \RuntimeException('Invalid base currency');
+                /** we need only base currency rates */
+                continue;
             }
 
             yield $this->mapper->toEntity([
